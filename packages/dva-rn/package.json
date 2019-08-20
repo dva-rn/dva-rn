@@ -1,0 +1,77 @@
+{
+  "name": "@dva-rn/dva-rn",
+  "version": "0.3.4",
+  "description": "dva width rn",
+  "main": "./lib",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "link": " npm run build",
+    "release": "sh ./scripts/release.sh",
+    "prepublish": "rm -rf ./lib && npm run build"
+  },
+  "files": [
+    "package.json",
+    "lib",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dva-rn/dva-rn.git"
+  },
+  "keywords": [
+    "dva",
+    "dva-rn",
+    "rn",
+    "react",
+    "react-native",
+    "react-native-web"
+  ],
+  "author": "D__",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dva-rn/dva-rn/issues"
+  },
+  "homepage": "https://github.com/dva-rn/dva-rn",
+  "dependencies": {
+    "@types/invariant": "^2.2.30",
+    "@types/react": "^16.8.23",
+    "@types/react-native": "^0.57.65",
+    "@types/react-redux": "^7.1.1",
+    "@types/react-router-dom": "^4.3.1",
+    "connected-react-router": "^6.3.2",
+    "dva-core": "^1.4.0",
+    "history": "^4.7.2",
+    "invariant": "^2.2.4",
+    "react-native-gesture-handler": "^1.3.0",
+    "react-navigation": "^3.11.1",
+    "react-navigation-redux-helpers": "^3.0.2",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^4.4.0-beta.8",
+    "redux": "^4.0.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.2",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "preeDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-native": "^0.59.10",
+    "react-native-web": "^0.11.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {}
+  },
+  "gitHead": "6bc46e687aa6101a815dc1d321e137bb50389354"
+}

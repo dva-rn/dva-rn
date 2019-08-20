@@ -1,0 +1,20 @@
+{
+  "publishConfig": {
+    "access": "public"
+  },
+  "changelog": {
+    "labels": {
+      "feat": ":rocket: New Feature",
+      "bug": ":bug: Bug Fix",
+      "doc": ":book: Documentation",
+      "refactor": ":memo: code refactoring",
+      "build": ":building_construction: Building systems or package dependency updates"
+    },
+    "cacheDir": ".changelog"
+  },
+  "packages": [
+    "packages/*"
+  ],
+  "npmClient": "yarn",
+  "version": "0.3.4"
+}
