@@ -2,7 +2,7 @@
  * @Description: README.md
  * @Author: swdenglian
  * @Date: 2019-07-15 17:04:49
- * @LastEditTime: 2019-08-09 11:07:03
+ * @LastEditTime: 2019-09-04 16:02:09
  -->
 # dva-rn
 
@@ -12,6 +12,7 @@
 
 - react-native
 - react-native-web
+- react-router-cache-route 支持web 的cache路由
 
 > react-native 中使用的是 react-navigation。
 > react-native-web 中使用的 react-router-dom。
@@ -42,7 +43,9 @@ import B from "./B";
 const dva = new Dva({
   routerConfigs: {
     path: "/",
-    routes: [{ path: "/a/:id", component: App }, { path: "/b", component: B }]
+    routes: [{ path: "/a/:id", component: App, cache:{
+      when:"forward" 
+    } }, { path: "/b", component: B }]
   },
   history: createBrowserHistory()
 });
