@@ -103,7 +103,14 @@ const dva = new Dva({
     path: "/",
     defaultRouter: "/b",
     routes: [
-      { path: "/a/:id", component: App , cache:{ when:"forward" }},
+      { path: "/a/:id", component: App , 
+        cache:{ 
+          when:"forward", 
+          behavior:(cached):any=>{
+            return cached ?{ style: { display: "none" }} : {style:{flex:1,display:'flex',height:'100%', width:'100%'}}
+          }
+        },
+      },
       { path: "/b", component: B , cache:{ when:"always" }},
       { path: "/c", component: C }
     ]

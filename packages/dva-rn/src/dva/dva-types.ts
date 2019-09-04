@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-22 09:38:50
- * @LastEditTime: 2019-09-04 16:01:14
+ * @LastEditTime: 2019-09-04 16:24:28
  */
 import { ComponentType } from "react";
 import { History } from "history";
@@ -22,7 +22,11 @@ export interface IRouterConfigs {
   component?: ComponentType<any>;
   routes?: IRouterConfigs[];
   cache?:{
-    when:"forward" | "back" | "always"
+    when?:"forward" | "back" | "always",
+    className?: string,
+    behavior?(cached:boolean):any;
+    cacheKey?: string;
+    unmount?: boolean;
   };
 }
 
