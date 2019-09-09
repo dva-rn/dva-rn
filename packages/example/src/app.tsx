@@ -18,6 +18,18 @@ interface IAppActions {
 }
 
 class AppContent extends React.Component<AppProps & IAppActions> {
+
+  public componentDidMount():void{
+    const { dispatch } = this.props;
+    const promise: Promise<any> = (dispatch!({
+      type:'count/addEffect',
+    })) as any;
+
+    promise.then(():void=>{}).catch(e=>{
+      console.log("catch error",e);
+    })
+  }
+
   render() {
     const { count, dispatch } = this.props;
     console.log(dva.getStore()!.getState());
@@ -94,6 +106,12 @@ const countModel: CountNameSpaceModel = {
   reducers: {
     add(state) {
       return state + 1;
+    }
+  },
+  effects:{
+    *addEffect(){
+      yield 0;
+      throw new Error('effects error');
     }
   }
 };

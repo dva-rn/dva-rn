@@ -47,8 +47,9 @@ export default class Dva {
       const { RouterComponent, history, createOpts } = createRouter(
         this.configs
       );
+      const { onError = ():void=>{} } = this.configs;
 
-      this.dvaInstance = create({ history }, createOpts);
+      this.dvaInstance = create({ history, onError }, createOpts);
 
       if (!this.dvaInstance!._store) {
         let otherWrapper = this.configs.otherWrapper;

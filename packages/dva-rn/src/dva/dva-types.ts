@@ -34,6 +34,7 @@ export interface IDvaConfigs {
   routerConfigs: IRouterConfigs;
   history?: any;
   otherWrapper?: (router: React.ReactElement) => React.ReactElement;
+  onError?:(e:Error)=>void;
 }
 
 export type IDvaOption = IHooks & {
